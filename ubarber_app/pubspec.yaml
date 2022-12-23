@@ -78,8 +78,8 @@ flutter:
   fonts:
     - family: Uber Move
       fonts:
-        - asset: src/fonts/UberMoveMedium.otf
-        - asset: fonts/UberMoveBold.otf
+        - asset: awesome_app/fonts/UberMoveMedium.otf
+        - asset: awesome_app/fonts/UberMoveBold.otf
           weight: 700
   
   # For details regarding fonts from package dependencies,
