@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ubarber_app/src/components/btn-black.dart';
+import 'package:ubarber_app/src/components/btn-google-primary.dart';
+import 'package:ubarber_app/src/components/divider.dart';
 import 'package:ubarber_app/src/components/logo-letter.dart';
-import 'package:ubarber_app/src/components/logo.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -9,14 +10,39 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _buildBody(), 
+      body: Center(child: _buildBody()),
     );
   }
 
   //construindo o layout
   //ref. Flutter Catalog
   Widget _buildBody() => Container(
-        color: Colors.green,
-        child: const LogoLetter(),
-      );
+      width: 278,
+      color: Colors.transparent,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          LogoLetter(),
+          //TODO: Atulizar btn
+          const PrimaryGoogleButton(title: "Logar com Google"),
+          MyDivider(),
+          const TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'login',
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(top: 10)),
+          const TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'senha',
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(top: 10)),
+          ButtonBlack(),
+        ],
+      ));
 }

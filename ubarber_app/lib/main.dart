@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:ubarber_app/src/components/logo-letter.dart';
+import 'package:flutter/services.dart';
 import 'package:ubarber_app/src/pages/login.dart';
 
 void main() {
@@ -16,7 +16,15 @@ class MyApp extends StatelessWidget {
       title: 'Ubarber Demo',
       theme: ThemeData(
         primarySwatch: Colors.grey,
+        backgroundColor: Colors.white,
         fontFamily: 'Uber Move',
+        appBarTheme: const AppBarTheme(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: Colors.green,
+            statusBarIconBrightness: Brightness.dark,
+            statusBarBrightness: Brightness.dark,
+          ),
+        )
       ),
       home: const LoginPage(),
     );
