@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Ubarber Demo',
       theme: ThemeData(
-          primarySwatch: Colors.blueGrey,
+          primarySwatch: Colors.grey,
           backgroundColor: Colors.white,
           fontFamily: 'Uber Move',
           // ignore: prefer_const_constructors
