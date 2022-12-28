@@ -17,32 +17,50 @@ class LoginPage extends StatelessWidget {
   //construindo o layout
   //ref. Flutter Catalog
   Widget _buildBody() => Container(
-      width: 278,
+      alignment: Alignment.center,
+      width: 478,
+      height: 926,
       color: Colors.transparent,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          LogoLetter(),
-          //TODO: Atulizar btn
-          const PrimaryGoogleButton(title: "Logar com Google"),
-          MyDivider(),
-          const TextField(
-            obscureText: true,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'login',
+          children: [
+            Padding(padding: EdgeInsets.only(top: 115)),
+            LogoLetter(),
+            Container(
+              width: 278,
+              height: 420,
+              color: Colors.transparent,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  //TODO: Refinar pagina
+                  const PrimaryGoogleButton(title: "Logar com Google"),
+                  MyDivider(),
+                  const TextField(
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'login',
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 10)),
+                  const TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'senha',
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 10)),
+                  Text("O Manter-se contectado"),
+                  Text("Esqueceu a senha?"),
+                  Padding(padding: EdgeInsets.only(top: 15)),
+                  ButtonBlack(),
+                  Padding(padding: EdgeInsets.only(top: 5)),
+                  Text("Não possui conta? Cadastre-se!"),
+                ],
+              ),
             ),
-          ),
-          Padding(padding: EdgeInsets.only(top: 10)),
-          const TextField(
-            obscureText: true,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'senha',
-            ),
-          ),
-          Padding(padding: EdgeInsets.only(top: 10)),
-          ButtonBlack(),
-        ],
-      ));
+          ],
+        ),
+      );
 }
