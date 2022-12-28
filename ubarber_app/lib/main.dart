@@ -1,6 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:ubarber_app/src/pages/form-cadastro.dart';
+// ignore: unused_import
 import 'package:ubarber_app/src/pages/login.dart';
 
 void main() {
@@ -15,18 +16,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Ubarber Demo',
       theme: ThemeData(
-        primarySwatch: Colors.grey,
-        backgroundColor: Colors.white,
-        fontFamily: 'Uber Move',
-        appBarTheme: const AppBarTheme(
-          systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Colors.green,
-            statusBarIconBrightness: Brightness.dark,
-            statusBarBrightness: Brightness.dark,
-          ),
-        )
-      ),
-      home: const LoginPage(),
+          primarySwatch: Colors.blueGrey,
+          backgroundColor: Colors.white,
+          fontFamily: 'Uber Move',
+          // ignore: prefer_const_constructors
+          appBarTheme: AppBarTheme(
+            systemOverlayStyle: const SystemUiOverlayStyle(
+              statusBarColor: Colors.green,
+              statusBarIconBrightness: Brightness.dark,
+              statusBarBrightness: Brightness.dark,
+            ),
+          )),
+      home: const FormCadastro(),
     );
   }
 }
@@ -56,7 +57,6 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: const Text("Olá Mundo"),
       ),
-    )
-;
+    );
   }
 }
