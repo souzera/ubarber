@@ -16,14 +16,15 @@ class FormCadastro extends StatelessWidget{
   
   Widget _build() => Container(
       width: 428,
-      color: Colors.green,
+      color: Colors.transparent,
       child: Column(
         children: [
           Padding(padding: EdgeInsets.only(top: 115)),
           LogoLetter(),
           Container(
+              alignment: Alignment.center,
               width: 278,
-              height: 420,
+              height: 440,
               color: Colors.transparent,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

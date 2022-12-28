@@ -17,9 +17,8 @@ class StateGoogleButton extends State<PrimaryGoogleButton> {
     return OutlinedButton(
               style: const ButtonStyle(
                 fixedSize: MaterialStatePropertyAll<Size>(Size(278, 68)),
-                backgroundColor: MaterialStatePropertyAll<Color>(Colors.white),
+                backgroundColor: MaterialStatePropertyAll<Color>(Colors.transparent),
                 side: MaterialStatePropertyAll<BorderSide>(BorderSide(color: Color.fromRGBO(217, 217, 217, 100))),
-                
               ),
               onPressed: (() {
                 print("Clicou");
