@@ -3,6 +3,7 @@ import 'package:ubarber_app/src/components/btn-black.dart';
 import 'package:ubarber_app/src/components/btn-google-primary.dart';
 import 'package:ubarber_app/src/components/divider.dart';
 import 'package:ubarber_app/src/components/logo-letter.dart';
+import 'package:ubarber_app/src/components/text-field.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -35,22 +36,12 @@ class LoginPage extends StatelessWidget {
                   //TODO: Refinar pagina
                   const PrimaryGoogleButton(title: "Logar com Google"),
                   MyDivider(),
-                  const TextField(
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'login',
-                    ),
-                  ),
-                  Padding(padding: EdgeInsets.only(top: 10)),
-                  const TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'senha',
-                    ),
-                  ),
-                  Padding(padding: EdgeInsets.only(top: 10)),
+                  MyTextField(
+                    placeholder: "usuário", 
+                    obscureText: false),
+                  MyTextField(
+                    placeholder: 'senha', 
+                    obscureText: true,),
                   Text("O Manter-se contectado"),
                   Text("Esqueceu a senha?"),
                   Padding(padding: EdgeInsets.only(top: 15)),

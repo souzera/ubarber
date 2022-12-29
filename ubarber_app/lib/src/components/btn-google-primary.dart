@@ -21,13 +21,17 @@ class StateGoogleButton extends State<PrimaryGoogleButton> {
                 side: MaterialStatePropertyAll<BorderSide>(BorderSide(color: Color.fromRGBO(217, 217, 217, 100))),
               ),
               onPressed: (() {
-                print("Clicou");
+                print("Clicou em logar com google");
               }), 
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   SvgPicture.asset(logoGoogle),
-                  Text(widget.title),
+                  Text(widget.title,
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
                 ],)
               );
   }

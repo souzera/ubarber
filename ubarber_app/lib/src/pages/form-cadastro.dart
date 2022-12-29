@@ -19,12 +19,12 @@ class FormCadastro extends StatelessWidget{
       color: Colors.transparent,
       child: Column(
         children: [
-          Padding(padding: EdgeInsets.only(top: 115)),
+          Padding(padding: EdgeInsets.only(top: 40)),
           LogoLetter(),
           Container(
               alignment: Alignment.center,
               width: 278,
-              height: 440,
+              height: 480,
               color: Colors.transparent,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -46,7 +46,7 @@ class FormCadastro extends StatelessWidget{
                   Divider(),
                   Padding(padding: EdgeInsets.only(top: 5)),
                   PrimaryGoogleButton(
-                    title: "Cadastrar-se com Google"),
+                    title: "Continuar com Google"),
                 ],
               ),
             ),
