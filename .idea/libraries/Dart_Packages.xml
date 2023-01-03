@@ -149,6 +149,13 @@
             </list>
           </value>
         </entry>
+        <entry key="splash_view">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../../../../../../flutter/.pub-cache/hosted/pub.dartlang.org/splash_view-2.0.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="stack_trace">
           <value>
             <list>
@@ -219,6 +226,7 @@
       <root url="file://$PROJECT_DIR$/../../../../../../../flutter/.pub-cache/hosted/pub.dartlang.org/path_parsing-1.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../../../flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-5.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../../../flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../flutter/.pub-cache/hosted/pub.dartlang.org/splash_view-2.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../../../flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../../../flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../../../../flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1/lib" />

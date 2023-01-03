@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       home: SplashView(
         backgroundColor: Colors.white,
         logo: const MyLogo(),
-        done: Done( Center(child: const FormCadastro())),
+        done: Done( Center(child: const LoginPage())),
       )
     );
   }
