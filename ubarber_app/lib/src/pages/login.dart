@@ -51,8 +51,6 @@ class LoginPage extends StatelessWidget {
                       CheckboxUB(title: "Manter-se conectado")
                     ],
                   )),
-                  Text("Esqueceu a senha?"),
-                  Padding(padding: EdgeInsets.only(top: 15)),
                   ButtonBlack(),
                   Padding(padding: EdgeInsets.only(top: 3)),
                   Row(
@@ -63,9 +61,25 @@ class LoginPage extends StatelessWidget {
                           onPressed: () {
                             print("clicou");
                           },
-                          child: Text("Cadastre-se!"))
+                          child: const Text(
+                            "Cadastre-se!",
+                            style: TextStyle(
+                              color: Colors.black,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ))
                     ],
-                  )
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      print("Ops esqueci a senha");
+                    },
+                    child: Text("Esqueceu a senha?",
+                        style: TextStyle(
+                          color: Colors.black,
+                          decoration: TextDecoration.underline,
+                        )),
+                  ),
                 ],
               ),
             ),

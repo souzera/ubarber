@@ -13,7 +13,7 @@ class _MyDividerState extends State<MyDivider> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.bottomCenter,
-      margin: EdgeInsets.only(top: 17, bottom: 17),
+      margin: EdgeInsets.only(top: 10, bottom: 10),
       width: 278,
       height: 21,
         child: Row(
