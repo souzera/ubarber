@@ -12,8 +12,8 @@ class _MyDividerState extends State<MyDivider> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.bottomCenter,
-      margin: EdgeInsets.only(top: 10, bottom: 10),
+      alignment: Alignment.center,
+      margin: EdgeInsets.only(top: 5, bottom: 3),
       width: 278,
       height: 21,
         child: Row(

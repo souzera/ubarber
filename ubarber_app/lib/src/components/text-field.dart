@@ -18,8 +18,7 @@ class MyTextField extends StatefulWidget {
 class _MyTextField extends State<MyTextField> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 3, bottom: 10),
+    return Container(
       child: TextFormField(
         autocorrect: false,
         obscureText: widget.obscureText,
