@@ -15,19 +15,28 @@ class _CheckboxUB extends State<CheckboxUB> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Checkbox(
-            activeColor: Colors.black,
-            value: isChecked,
-            onChanged: (bool? value) {
-              setState(() {
-                isChecked = value!;
-              });
-            }),
-        Text(widget.title),
-      ],
+    return Container(
+      padding: EdgeInsets.only(top: 10, bottom: 15),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: 20,
+            height: 20,
+            child: Checkbox(
+              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              activeColor: Colors.black,
+              value: isChecked,
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked = value!;
+                });
+              }),
+          ),
+          Padding(padding: EdgeInsets.only(left: 10)),
+          Text(widget.title),
+        ],
+      ),
     );
   }
 }

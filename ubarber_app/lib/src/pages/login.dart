@@ -42,17 +42,21 @@ class LoginPage extends StatelessWidget {
                   MyDivider(),
                   Form(
                       child: Column(
-                    children: [
-                      MyTextField(placeholder: "usuário", obscureText: false),
-                      MyTextField(
-                        placeholder: 'senha',
-                        obscureText: true,
-                      ),
-                      CheckboxUB(title: "Manter-se conectado")
-                    ],
-                  )),
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          MyTextField(
+                            placeholder: "usuário", 
+                            obscureText: false,
+                          ),
+                          MyTextField(
+                            placeholder: 'senha',
+                            obscureText: true,
+                          ),
+                          CheckboxUB(title: "Manter-se conectado")
+                        ],
+                      )
+                    ),
                   ButtonBlack(),
-                  Padding(padding: EdgeInsets.only(top: 3)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -78,7 +82,8 @@ class LoginPage extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           decoration: TextDecoration.underline,
-                        )),
+                        )
+                      ),
                   ),
                 ],
               ),

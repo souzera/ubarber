@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:splash_view/source/presentation/pages/pages.dart';
 import 'package:splash_view/source/presentation/presentation.dart';
 import 'package:ubarber_app/src/components/logo.dart';
-import 'package:ubarber_app/src/pages/form-cadastro.dart';
 // ignore: unused_import
 import 'package:ubarber_app/src/pages/login.dart';
 
