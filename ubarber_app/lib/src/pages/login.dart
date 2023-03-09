@@ -1,3 +1,4 @@
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:ubarber_app/src/components/btn-black.dart';
@@ -6,6 +7,8 @@ import 'package:ubarber_app/src/components/divider.dart';
 import 'package:ubarber_app/src/components/logo-letter.dart';
 import 'package:ubarber_app/src/components/text-field.dart';
 import 'package:ubarber_app/src/components/ub-checkbox.dart';
+import 'package:ubarber_app/src/forms/login-form.dart';
+import 'package:ubarber_app/src/pages/cadastro-cliente.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -40,30 +43,14 @@ class LoginPage extends StatelessWidget {
                   //TODO: Refinar pagina
                   const PrimaryGoogleButton(title: "Logar com Google"),
                   MyDivider(),
-                  Form(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          MyTextField(
-                            placeholder: "usuário", 
-                            obscureText: false,
-                          ),
-                          MyTextField(
-                            placeholder: 'senha',
-                            obscureText: true,
-                          ),
-                          CheckboxUB(title: "Manter-se conectado")
-                        ],
-                      )
-                    ),
-                  ButtonBlack(),
+                  LoginForm(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("Não tem conta?"),
                       TextButton(
                           onPressed: () {
-                            print("clicou");
+                            print('TODO: redirecionar para tela de cadastro');
                           },
                           child: const Text(
                             "Cadastre-se!",
@@ -76,14 +63,13 @@ class LoginPage extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      print("Ops esqueci a senha");
+                      print("esqueceu a senha kskkss");
                     },
                     child: Text("Esqueceu a senha?",
                         style: TextStyle(
                           color: Colors.black,
                           decoration: TextDecoration.underline,
-                        )
-                      ),
+                        )),
                   ),
                 ],
               ),

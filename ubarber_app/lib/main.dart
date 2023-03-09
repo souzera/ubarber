@@ -3,6 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:splash_view/source/presentation/pages/pages.dart';
 import 'package:splash_view/source/presentation/presentation.dart';
 import 'package:ubarber_app/src/components/logo.dart';
+import 'package:ubarber_app/src/components/tile-empresa.dart';
+import 'package:ubarber_app/src/pages/cadastro-cliente.dart';
+import 'package:ubarber_app/src/pages/list-barbearia.dart';
 // ignore: unused_import
 import 'package:ubarber_app/src/pages/login.dart';
 
@@ -31,9 +34,14 @@ class MyApp extends StatelessWidget {
           )),
       home: SplashView(
         backgroundColor: Colors.white,
-        logo: const MyLogo(),
-        done: Done( Center(child: const LoginPage())),
-      )
+        logo: MyLogo(),
+        done: Done( Center(child: TelaLista(
+          items: List<InfoMockupEmp>.generate(100,((i)=> InfoBTNEmpresa('empresa $i', 'Rua $i')),
+      ))))),
+      routes: <String, WidgetBuilder>{
+        '/login': (BuildContext context) => new LoginPage(),
+        '/cadastro': (BuildContext context) => FormCadastro()
+      },
     );
   }
 }

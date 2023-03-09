@@ -24,14 +24,15 @@ class _CheckboxUB extends State<CheckboxUB> {
             width: 20,
             height: 20,
             child: Checkbox(
-              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              activeColor: Colors.black,
-              value: isChecked,
-              onChanged: (bool? value) {
-                setState(() {
-                  isChecked = value!;
-                });
-              }),
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                activeColor: Colors.black,
+                value: isChecked,
+                onChanged: (bool? value) {
+                  setState(() {
+                    isChecked = value!;
+                  });
+                  print(isChecked);
+                }),
           ),
           Padding(padding: EdgeInsets.only(left: 10)),
           Text(widget.title),
