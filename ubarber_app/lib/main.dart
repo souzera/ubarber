@@ -8,6 +8,7 @@ import 'package:ubarber_app/src/pages/cadastro-cliente.dart';
 import 'package:ubarber_app/src/pages/list-barbearia.dart';
 // ignore: unused_import
 import 'package:ubarber_app/src/pages/login.dart';
+import 'package:ubarber_app/src/pages/testes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,9 +36,10 @@ class MyApp extends StatelessWidget {
       home: SplashView(
         backgroundColor: Colors.white,
         logo: MyLogo(),
-        done: Done( Center(child: TelaLista(
-          items: List<InfoMockupEmp>.generate(100,((i)=> InfoBTNEmpresa('empresa $i', 'Rua $i')),
-      ))))),
+        done: Done( Center(child:
+          //TelaTestes(), 
+          TelaLista(items: List<InfoMockupEmp>.generate(100,((i)=> InfoBTNEmpresa('empresa $i', 'Rua $i')),))
+      ))),
       routes: <String, WidgetBuilder>{
         '/login': (BuildContext context) => new LoginPage(),
         '/cadastro': (BuildContext context) => FormCadastro()
