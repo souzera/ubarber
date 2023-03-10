@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:splash_view/source/presentation/pages/pages.dart';
 import 'package:splash_view/source/presentation/presentation.dart';
+import 'package:ubarber_app/src/classes/users.dart';
 import 'package:ubarber_app/src/components/logo.dart';
 import 'package:ubarber_app/src/components/tile-empresa.dart';
 import 'package:ubarber_app/src/pages/cadastro-cliente.dart';
 import 'package:ubarber_app/src/pages/list-barbearia.dart';
 // ignore: unused_import
 import 'package:ubarber_app/src/pages/login.dart';
+import 'package:ubarber_app/src/pages/profile.dart';
 import 'package:ubarber_app/src/pages/testes.dart';
 
 void main() {
@@ -37,7 +39,8 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         logo: MyLogo(),
         done: Done( Center(child:
-          TelaTestes(), 
+          //TelaTestes(), 
+          TelaProfile(usuario: User(username: "Cafezinho", password: '123', manter: true),)
           //TelaLista(items: List<InfoMockupEmp>.generate(100,((i)=> InfoBTNEmpresa('empresa $i', 'Rua $i')),))
       ))),
       routes: <String, WidgetBuilder>{
