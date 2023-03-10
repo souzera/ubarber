@@ -37,8 +37,8 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         logo: MyLogo(),
         done: Done( Center(child:
-          //TelaTestes(), 
-          TelaLista(items: List<InfoMockupEmp>.generate(100,((i)=> InfoBTNEmpresa('empresa $i', 'Rua $i')),))
+          TelaTestes(), 
+          //TelaLista(items: List<InfoMockupEmp>.generate(100,((i)=> InfoBTNEmpresa('empresa $i', 'Rua $i')),))
       ))),
       routes: <String, WidgetBuilder>{
         '/login': (BuildContext context) => new LoginPage(),
