@@ -42,7 +42,10 @@ class FormCadastro extends StatelessWidget{
                   MyTextField(
                     placeholder: "Confirmar Senha", 
                     obscureText: true,),
-                  ButtonBlack(),
+                  ButtonBlack(
+                    title: "Cadastra-se",
+                    method: 1,
+                  ),
                   Divider(),
                   Padding(padding: EdgeInsets.only(top: 5)),
                   PrimaryGoogleButton(
