@@ -26,7 +26,10 @@ class TelaLista extends StatelessWidget {
           Padding(padding: EdgeInsets.only(bottom: 10)),
           ListEmpresa(items: _items),
           Padding(padding: EdgeInsets.only(bottom: 10)),
-          MenuBottom(),
+          MenuBottom(
+              icon1: Icon(Icons.arrow_back),
+              icon2: Icon(Icons.person_outline),
+              icon3: Icon(Icons.star_outline),),
         ],
       ),
     );

@@ -4,4 +4,6 @@ class User {
   final bool manter;
 
   User({required this.username, required this.password, required this.manter});
+
+  
 }
