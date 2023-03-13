@@ -4,6 +4,7 @@ import 'package:ubarber_app/src/classes/barber.dart';
 import 'package:ubarber_app/src/components/avatar.dart';
 import 'package:ubarber_app/src/components/logo-letter.dart';
 import 'package:ubarber_app/src/components/menu-bottom.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../classes/users.dart';
 
@@ -11,25 +12,38 @@ class TelaProfile extends StatelessWidget {
   //final User usuario;
   final int ctx;
 
-
   TelaProfile({super.key, required this.ctx});
 
   _profileContent(_ctx) {
     switch (_ctx) {
       case 0:
-        return clientContent(User(username: 'Cafezinho', password: '123', manter: true));
+        return clientContent(
+            User(username: 'Cafezinho', password: '123', manter: true));
       case 1:
         //tentar fazer a consulta utilizando o id
         return barberContent();
     }
   }
 
+  void openURL() async {
+    const url = 'https://wa.me/558798196922';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      print('num foi');
+    }
+  }
+
   Container barberContent() {
     Barbearia barbearia = Barbearia(
+      nome: 'Cafezinho',
       local: 'Avenida Getulio Vargas, nº132\nTriunfo-PE ',
-      horarioFuncionamento: "Segunda à Sexta 8h00 às 16h00\nSábado 8h00 às 12h00",
-      servicos: "serviço 1 - cabelo simples \nserviço2 - corte militar \nserviço3 - degrade\nserviço 4 - cabelo e barba",
-      contato: "87 9 98196922",);
+      horarioFuncionamento:
+          "Segunda à Sexta 8h00 às 16h00\nSábado 8h00 às 12h00",
+      servicos:
+          "serviço 1 - cabelo simples \nserviço2 - corte militar \nserviço3 - degrade\nserviço 4 - cabelo e barba",
+      contato: "87 9 98196922",
+    );
 
     return Container(
       child: Column(children: [
@@ -42,12 +56,16 @@ class TelaProfile extends StatelessWidget {
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5),
-                child: Icon(Icons.place_outlined,size: 38,),),
-              Text(barbearia.local,
-                textAlign: TextAlign.center, 
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold),),
+                child: Icon(
+                  Icons.place_outlined,
+                  size: 38,
+                ),
+              ),
+              Text(
+                barbearia.local,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
             ],
           ),
         ),
@@ -55,7 +73,11 @@ class TelaProfile extends StatelessWidget {
           alignment: Alignment.center,
           width: 315,
           height: 60,
-          child: Text(barbearia.horarioFuncionamento, textAlign: TextAlign.center, style: TextStyle(fontSize: 16),),
+          child: Text(
+            barbearia.horarioFuncionamento,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16),
+          ),
         ),
         Container(
           alignment: Alignment.topLeft,
@@ -65,35 +87,47 @@ class TelaProfile extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
             child: Text(barbearia.servicos,
-            textAlign: TextAlign.left, 
-            style: TextStyle(fontSize: 16)),
+                textAlign: TextAlign.left, style: TextStyle(fontSize: 16)),
           ),
         ),
         Container(
           width: 315,
           height: 120,
-          child: Column(
-            children: [
-              Padding(padding: EdgeInsets.only(bottom: 10)),
-              Text(barbearia.contato, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-              Padding(padding: EdgeInsets.only(bottom: 10)),
-              MaterialButton(
+          child: Column(children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(Icons.whatsapp,size: 32),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                  child: Text(
+                  barbearia.contato,
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ), 
+                ),
+              ],
+            ),
+            
+            Padding(padding: EdgeInsets.only(bottom: 10)),
+            MaterialButton(
                 color: Color.fromRGBO(227, 227, 227, 100),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30)),
-                onPressed: () {  
-                  print("enviar mensagem");
-                },
+                    borderRadius: BorderRadius.circular(30)),
+                onPressed: () => openURL(),
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 18),
-                      child: Text("Enviar Mensagem", style: TextStyle(fontSize: 18),),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 18),
+                      child: Text(
+                        "Enviar Mensagem",
+                        style: TextStyle(fontSize: 18),
                       ),
+                    ),
                   ],
                 )),
-          ]
-          ),
+          ]),
         ),
       ]),
     );
@@ -133,7 +167,7 @@ class TelaProfile extends StatelessWidget {
           MenuBottom(
             icon1: Icon(Icons.arrow_back),
             icon2: Icon(Icons.search),
-            icon3: Icon(Icons.border_color_outlined),
+            icon3: Icon(Icons.draw_outlined),
           ),
         ]),
       ),

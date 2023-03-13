@@ -17,7 +17,7 @@ class ListEmpresa extends StatelessWidget {
       height: 500,
         color: Colors.transparent,
         child: ListView.builder(
-          itemCount: 100,
+          itemCount: items.length,
           itemBuilder: ((context, index) {
             final item = items[index];
             return Container(
