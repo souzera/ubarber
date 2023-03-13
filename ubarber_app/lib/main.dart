@@ -13,6 +13,9 @@ import 'package:ubarber_app/src/pages/profile.dart';
 import 'package:ubarber_app/src/pages/testes.dart';
 
 void main() {
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp, 
+    DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
 
@@ -36,16 +39,26 @@ class MyApp extends StatelessWidget {
             ),
           )),
       home: SplashView(
-        backgroundColor: Colors.white,
-        logo: MyLogo(),
-        done: Done( Center(child:
-          //TelaTestes(), 
-          TelaProfile(usuario: User(username: "Cafezinho", password: '123', manter: true),)
-          //TelaLista(items: List<InfoMockupEmp>.generate(100,((i)=> InfoBTNEmpresa('empresa $i', 'Rua $i')),))
-      ))),
+          backgroundColor: Colors.white,
+          logo: MyLogo(),
+          done: Done(Center(
+              child:
+                  //TelaTestes(),
+                  //TelaProfile(
+                  //  usuario: User(
+                  //    username: "Cafezinho", 
+                  //    password: '123', 
+                  //    manter: true),
+                  //  ctx: 1,
+                  //)
+
+              TelaLista(items: List<InfoMockupEmp>.generate(10,((i)=> InfoBTNEmpresa('Barbearia Estilo $i', 'Avenida Presidente Prudente nº$i')),))
+              ))),
       routes: <String, WidgetBuilder>{
         '/login': (BuildContext context) => new LoginPage(),
-        '/cadastro': (BuildContext context) => FormCadastro()
+        '/cadastro': (BuildContext context) => new FormCadastro(),
+        '/barbearia' : (BuildContext context) => TelaProfile(ctx: 1),
+        '/cliente':(BuildContext context) => TelaProfile(ctx: 0)
       },
     );
   }
