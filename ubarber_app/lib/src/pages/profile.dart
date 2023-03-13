@@ -8,60 +8,92 @@ import 'package:ubarber_app/src/components/menu-bottom.dart';
 import '../classes/users.dart';
 
 class TelaProfile extends StatelessWidget {
-  final User usuario;
+  //final User usuario;
   final int ctx;
 
 
-  TelaProfile({super.key, required this.usuario, required this.ctx});
+  TelaProfile({super.key, required this.ctx});
 
-  _profileContent(_ctx, usuario) {
+  _profileContent(_ctx) {
     switch (_ctx) {
       case 0:
-        return clientContent(usuario);
+        return clientContent(User(username: 'Cafezinho', password: '123', manter: true));
       case 1:
+        //tentar fazer a consulta utilizando o id
         return barberContent();
     }
   }
 
   Container barberContent() {
     Barbearia barbearia = Barbearia(
-      local: 'Avenida Getulio Vargas, nº132\n Triunfo-PE ',
-      horarioFuncionamento: "segunda à sexta",
-      servicos: "serviço 1 \nserviço2 \nserviço3",
+      local: 'Avenida Getulio Vargas, nº132\nTriunfo-PE ',
+      horarioFuncionamento: "Segunda à Sexta 8h00 às 16h00\nSábado 8h00 às 12h00",
+      servicos: "serviço 1 - cabelo simples \nserviço2 - corte militar \nserviço3 - degrade\nserviço 4 - cabelo e barba",
       contato: "87 9 98196922",);
 
     return Container(
       child: Column(children: [
         Container(
           width: 315,
-          height: 60,
-          padding: EdgeInsets.only(bottom: 8),
+          height: 62,
+          padding: EdgeInsets.only(bottom: 6),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.pin_drop_outlined,size: 32,),
-              Padding(padding: EdgeInsets.symmetric(horizontal: 5)),
-              Text(barbearia.local, style: TextStyle(fontSize: 18,),),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                child: Icon(Icons.place_outlined,size: 38,),),
+              Text(barbearia.local,
+                textAlign: TextAlign.center, 
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold),),
             ],
           ),
         ),
         Container(
+          alignment: Alignment.center,
           width: 315,
-          height: 80,
-          color: Colors.green,
-          child: Text(barbearia.horarioFuncionamento),
+          height: 60,
+          child: Text(barbearia.horarioFuncionamento, textAlign: TextAlign.center, style: TextStyle(fontSize: 16),),
         ),
         Container(
+          alignment: Alignment.topLeft,
           width: 315,
           height: 200,
-          color: Colors.blue,
-          child: Text(barbearia.servicos),
+          color: Color.fromRGBO(227, 227, 227, 100),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+            child: Text(barbearia.servicos,
+            textAlign: TextAlign.left, 
+            style: TextStyle(fontSize: 16)),
+          ),
         ),
         Container(
           width: 315,
-          height: 100,
-          color: Colors.amber,
-          child: Text(barbearia.contato),
+          height: 120,
+          child: Column(
+            children: [
+              Padding(padding: EdgeInsets.only(bottom: 10)),
+              Text(barbearia.contato, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+              Padding(padding: EdgeInsets.only(bottom: 10)),
+              MaterialButton(
+                color: Color.fromRGBO(227, 227, 227, 100),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30)),
+                onPressed: () {  
+                  print("enviar mensagem");
+                },
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 18),
+                      child: Text("Enviar Mensagem", style: TextStyle(fontSize: 18),),
+                      ),
+                  ],
+                )),
+          ]
+          ),
         ),
       ]),
     );
@@ -86,7 +118,7 @@ class TelaProfile extends StatelessWidget {
   Widget build(BuildContext context) => _build();
 
   Widget _build() {
-    Container _content = _profileContent(ctx, usuario);
+    Container _content = _profileContent(ctx);
     return Scaffold(
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [

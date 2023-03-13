@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ubarber_app/src/pages/profile.dart';
 
 class ListEmpresa extends StatelessWidget {
   final List<InfoMockupEmp> items;
@@ -26,7 +27,9 @@ class ListEmpresa extends StatelessWidget {
               child: ListTile(
                 title: item.buildTitle(context),
                 subtitle: item.buildSubtitle(context),
-                onTap: () => {print("clicou no item $index")},
+                onTap: () => {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>TelaProfile(ctx: 1)))
+                },
                 tileColor: Colors.transparent,
               ),
           );

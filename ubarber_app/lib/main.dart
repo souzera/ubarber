@@ -44,15 +44,21 @@ class MyApp extends StatelessWidget {
           done: Done(Center(
               child:
                   //TelaTestes(),
-                  TelaProfile(
-            usuario: User(username: "Cafezinho", password: '123', manter: true),
-            ctx: 1,
-          )
-              //TelaLista(items: List<InfoMockupEmp>.generate(100,((i)=> InfoBTNEmpresa('empresa $i', 'Rua $i')),))
+                  //TelaProfile(
+                  //  usuario: User(
+                  //    username: "Cafezinho", 
+                  //    password: '123', 
+                  //    manter: true),
+                  //  ctx: 1,
+                  //)
+
+              TelaLista(items: List<InfoMockupEmp>.generate(100,((i)=> InfoBTNEmpresa('empresa $i', 'Rua $i')),))
               ))),
       routes: <String, WidgetBuilder>{
         '/login': (BuildContext context) => new LoginPage(),
-        '/cadastro': (BuildContext context) => FormCadastro()
+        '/cadastro': (BuildContext context) => new FormCadastro(),
+        '/barbearia' : (BuildContext context) => TelaProfile(ctx: 1),
+        '/cliente':(BuildContext context) => TelaProfile(ctx: 0)
       },
     );
   }

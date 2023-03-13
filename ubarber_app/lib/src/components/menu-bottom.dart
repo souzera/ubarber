@@ -22,8 +22,7 @@ class MenuBottom extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
         children: [
           IconButton(
-                onPressed: () {
-                  print('clicou botao 1');
+                onPressed: () {Navigator.pop(context);
                 },
                 icon: icon1,
                 highlightColor: Colors.blueGrey,
