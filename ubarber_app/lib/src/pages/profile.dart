@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ubarber_app/src/classes/barber.dart';
 import 'package:ubarber_app/src/components/avatar.dart';
+import 'package:ubarber_app/src/components/historico.dart';
 import 'package:ubarber_app/src/components/logo-letter.dart';
 import 'package:ubarber_app/src/components/menu-bottom.dart';
+import 'package:ubarber_app/src/components/tile-list.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../classes/users.dart';
@@ -139,12 +141,7 @@ class TelaProfile extends StatelessWidget {
             "Atividade",
             style: TextStyle(fontSize: 20),
           ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 5),
-            width: 315,
-            height: 400,
-            color: Colors.amber,
-          )
+          Historico(items: List<InfoMockup>.generate(10,((i)=> InfoBTN('Corte $i - Cabelo Simples e Barba', 'Dia $i/03/2023')),))
         ]),
       );
 

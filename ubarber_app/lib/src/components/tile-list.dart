@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ubarber_app/src/pages/profile.dart';
 
-class ListEmpresa extends StatelessWidget {
-  final List<InfoMockupEmp> items;
+class ListTiles extends StatelessWidget {
+  final List<InfoMockup> items;
 
-  const ListEmpresa({super.key, required this.items});
+  const ListTiles({super.key, required this.items});
 
   @override
   Widget build(BuildContext context) {
@@ -37,19 +37,19 @@ class ListEmpresa extends StatelessWidget {
       );
 }
 
-abstract class InfoMockupEmp {
+abstract class InfoMockup {
   Widget buildTitle(BuildContext context);
   Widget buildSubtitle(BuildContext context);
 }
 
-class InfoBTNEmpresa implements InfoMockupEmp {
-  final String nomeEmp;
-  final String endereco;
+class InfoBTN implements InfoMockup {
+  final String title;
+  final String subtitle;
 
-  InfoBTNEmpresa(this.nomeEmp, this.endereco);
+  InfoBTN(this.title, this.subtitle);
 
   @override
-  Widget buildTitle(BuildContext context) => Text(nomeEmp);
+  Widget buildTitle(BuildContext context) => Text(title);
   @override
-  Widget buildSubtitle(BuildContext context) => Text(endereco);
+  Widget buildSubtitle(BuildContext context) => Text(subtitle);
 }
