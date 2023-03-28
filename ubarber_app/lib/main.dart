@@ -53,6 +53,7 @@ class MyApp extends StatelessWidget {
                   //)
 
               TelaLista(items: List<InfoMockup>.generate(10,((i)=> InfoBTN('Barbearia Estilo $i', 'Avenida Presidente Prudente nº$i')),))
+              //LoginPage(),
               ))),
       routes: <String, WidgetBuilder>{
         '/login': (BuildContext context) => new LoginPage(),

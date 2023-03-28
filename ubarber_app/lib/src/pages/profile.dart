@@ -141,7 +141,7 @@ class TelaProfile extends StatelessWidget {
             "Atividade",
             style: TextStyle(fontSize: 20),
           ),
-          Historico(items: List<InfoMockup>.generate(10,((i)=> InfoBTN('Corte $i - Cabelo Simples e Barba', 'Dia $i/03/2023')),))
+          Historico(items: List<InfoMockup>.generate(10,((i)=> InfoBTN('Corte $i - Cabelo Simples e Barba', 'Dia 21/0$i/2022')),))
         ]),
       );
 
