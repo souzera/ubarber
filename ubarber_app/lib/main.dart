@@ -4,7 +4,7 @@ import 'package:splash_view/source/presentation/pages/pages.dart';
 import 'package:splash_view/source/presentation/presentation.dart';
 import 'package:ubarber_app/src/classes/users.dart';
 import 'package:ubarber_app/src/components/logo.dart';
-import 'package:ubarber_app/src/components/tile-empresa.dart';
+import 'package:ubarber_app/src/components/tile-list.dart';
 import 'package:ubarber_app/src/pages/cadastro-cliente.dart';
 import 'package:ubarber_app/src/pages/list-barbearia.dart';
 // ignore: unused_import
@@ -52,7 +52,8 @@ class MyApp extends StatelessWidget {
                   //  ctx: 1,
                   //)
 
-              TelaLista(items: List<InfoMockupEmp>.generate(10,((i)=> InfoBTNEmpresa('Barbearia Estilo $i', 'Avenida Presidente Prudente nº$i')),))
+              TelaLista(items: List<InfoMockup>.generate(10,((i)=> InfoBTN('Barbearia Estilo $i', 'Avenida Presidente Prudente nº$i')),))
+              //LoginPage(),
               ))),
       routes: <String, WidgetBuilder>{
         '/login': (BuildContext context) => new LoginPage(),
