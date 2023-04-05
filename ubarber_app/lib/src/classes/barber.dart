@@ -12,4 +12,14 @@ class Barbearia extends User{
       required this.horarioFuncionamento,
       required this.servicos,
       required this.contato}): super(username: "cafezin", password: '123', manter: true);
+
+  factory Barbearia.fromJson(Map<String, dynamic> json){
+
+    return Barbearia(
+      nome: json['nome'], 
+      local: json['local'], 
+      horarioFuncionamento: json['horarioFuncionamento'], 
+      servicos: json['servicos'], 
+      contato: json['contato']);
+  }
 }

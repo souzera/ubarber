@@ -1,14 +1,14 @@
 import psycopg2
 
-class ConectDatabase:
+class ConnectDatabase:
 
     def __init__(self):
-        self._connect = psycopg2.connect(
+        self.connect = psycopg2.connect(
             host="localhost",
-            database="ubarber_db",
+            database="ubarber-db",
             user="postgres",
             password="1969"
         )
 
     def get_instance(self):
-        return self._connect
+        return self.connect

@@ -1,7 +1,7 @@
 class Usuario:
 
-    def __init__(self, username, senha, url_avatar = 'src/icons/avatar_default.png', status=True):
-        self.id = None
+    def __init__(self, username, senha, url_avatar = 'src/icons/avatar_default.png', status=True, id = None):
+        self.id = id
         self._username = username
         self._senha = senha
         self._avatar = url_avatar
