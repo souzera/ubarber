@@ -1,13 +1,14 @@
 from connect.conect import ConnectDatabase
 from modules.barbearia.barbearia import Barbearia
 
-
 class BarbeariaDAO:
 
-    _TABLE_NAME = 'barbearia'
+    _TABLE_NAME = 'barbearias'
 
     _SELECT_ALL = f'SELECT * FROM {_TABLE_NAME}'
     _SELECT_BY_ID = f'SELECT * FROM {_TABLE_NAME} WHERE id= %s'
+    _INSERT_INTO = f'INSERT INTO {_TABLE_NAME}(nome, whatsapp, local, horarios, user_id) VALUES ' \
+                   f'(%s,%s, %s, %s, %s)'
 
 
     def __init__(self):
@@ -27,4 +28,12 @@ class BarbeariaDAO:
         return barbearias
 
     def get_by_id(self,id):
-        pass
+        cursor = self.database.cursor()
+        cursor.execute(self._SELECT_BY_ID, id)
+        barbearia_query = cursor.fetchone()
+        collumns_name = [desc[0] for desc in cursor.description]
+        data = dict(zip(collumns_name, barbearia_query))
+        barbearia = Barbearia(**data)
+        cursor.close()
+        return barbearia
+

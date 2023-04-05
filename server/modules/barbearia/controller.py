@@ -1,9 +1,10 @@
 from flask import jsonify, make_response, Blueprint, request
 
-from modules.barbearia.dao import BarbeariaDAO as dao_barbearia
+from modules.barbearia.dao import BarbeariaDAO
 
 app_barbearia = Blueprint('barbearia_blueprint', __name__)
 app_name = 'barbearia'
+dao_barbearia = BarbeariaDAO()
 
 @app_barbearia.route(f'/{app_name}s/')
 def get_barbearias():

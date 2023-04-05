@@ -13,5 +13,7 @@ app.register_blueprint(app_cliente)
 app.register_blueprint(app_barbearia)
 app.register_blueprint(app_atividade)
 
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    print('ola mundo')
+    #app.run(debug=True)
