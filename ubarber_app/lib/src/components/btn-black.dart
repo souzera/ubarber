@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ubarber_app/src/classes/users.dart';
+import 'package:ubarber_app/src/modules/usuario/users.dart';
 import 'package:ubarber_app/src/util/const.dart';
 import 'package:ubarber_app/src/util/methods.dart';
 
@@ -16,17 +15,14 @@ class ButtonBlack extends StatefulWidget {
 
 class _BlackButton extends State<ButtonBlack> {
   selectMethod() {
-    if (widget.method == LOGIN) {
-      User _user = User(username: 'matheus', password: 'senha', manter: true);
-      return login(_user);
-    }
+    print('executar ação');
   }
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ButtonStyle(
-          fixedSize: MaterialStatePropertyAll<Size>(Size(278, 68)),
+          fixedSize: MaterialStatePropertyAll<Size>(Size(270, 60)),
           backgroundColor: MaterialStatePropertyAll<Color>(Colors.black),
         ),
         onPressed: this.selectMethod(),
@@ -37,7 +33,7 @@ class _BlackButton extends State<ButtonBlack> {
               widget.title,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 20,
+                fontSize: 18,
               ),
             )
           ],

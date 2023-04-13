@@ -1,39 +1,36 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:ubarber_app/src/components/avatar.dart';
-import 'package:ubarber_app/src/components/fade.dart';
+import 'package:ubarber_app/src/modules/usuario/users.dart';
 
-class TelaTestes extends StatelessWidget {
-  const TelaTestes({super.key});
+import '../modules/usuario/get-user.dart';
+
+class TelaTestes extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _TesteState();
+}
+
+class _TesteState extends State<TelaTestes> {
+  late Future<User> futureUser;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      backgroundColor: Colors.blue,
-      body: Center(
-          child: Column(
-        children: [
-          Container(
-            color: Colors.yellow,
-            width: 315,
-            height: 80,
-          ),
-          Avatar(
-            username: "Blue Pen", 
-            url: "https://s2.glbimg.com/gZrnzQkY70EZ2ZP0zwB689bUAak=/0x0:5184x3456/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/9/e/EYKMBXR72tNdkUAgmZzQ/azul-caneta.jpg",),
-          Container(
-            color: Colors.red,
-            width: 315,
-            height: 180,
-          ),
-          Container(
-            color: Colors.green,
-            width: 315,
-            height: 430,
-            child: Fade(typeFade: 0),
-          ),
-        ],
-      )),
-    );
+        backgroundColor: Colors.white,
+        body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(onPressed: () => {
+                  Get.toNamed('/login')
+                }, child: Text('Login', style: TextStyle(fontSize: 32),))
+              ],)));
   }
 }

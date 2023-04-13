@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ubarber_app/src/classes/users.dart';
+import 'package:ubarber_app/src/modules/usuario/users.dart';
 import 'package:ubarber_app/src/components/btn-black.dart';
 import 'package:ubarber_app/src/components/text-field.dart';
 import 'package:ubarber_app/src/components/ub-checkbox.dart';
@@ -12,10 +12,10 @@ class LoginForm extends StatefulWidget {
 
 class _LoginForm extends State<LoginForm> {
   final _formkey = GlobalKey<FormState>();
-  User _user = User(username: "", password: "", manter: false);
+  User _user = User(username: "", senha: "", status: false, id: 1, urlAvatar: '');
 
   bool _validarUser() {
-    if (_user.username == 'matheus' && _user.password == 'senha') {
+    if (_user.username == 'matheus' && _user.senha == 'senha') {
       return true;
     }
     return false;
@@ -34,7 +34,7 @@ class _LoginForm extends State<LoginForm> {
         TextFormField(
           obscureText: true,
           decoration: InputDecoration(labelText: 'senha'),
-          onSaved: (newValue) => _user.password = newValue!,
+          onSaved: (newValue) => _user.senha = newValue!,
         ),
         CheckboxUB(
           title: "Manter-se conectado",

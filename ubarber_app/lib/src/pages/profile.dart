@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ubarber_app/src/classes/barber.dart';
+import 'package:ubarber_app/src/modules/classes/barber.dart';
 import 'package:ubarber_app/src/components/avatar.dart';
 import 'package:ubarber_app/src/components/historico.dart';
 import 'package:ubarber_app/src/components/logo-letter.dart';
@@ -8,7 +8,7 @@ import 'package:ubarber_app/src/components/menu-bottom.dart';
 import 'package:ubarber_app/src/components/tile-list.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../classes/users.dart';
+import '../modules/usuario/users.dart';
 
 class TelaProfile extends StatelessWidget {
   //final User usuario;
@@ -19,8 +19,7 @@ class TelaProfile extends StatelessWidget {
   _profileContent(_ctx) {
     switch (_ctx) {
       case 0:
-        return clientContent(
-            User(username: 'Cafezinho', password: '123', manter: true));
+        return clientContent({});
       case 1:
         //tentar fazer a consulta utilizando o id
         return barberContent();
@@ -37,15 +36,6 @@ class TelaProfile extends StatelessWidget {
   }
 
   Container barberContent() {
-    Barbearia barbearia = Barbearia(
-      nome: 'Cafezinho',
-      local: 'Avenida Getulio Vargas, nº132\nTriunfo-PE ',
-      horarioFuncionamento:
-          "Segunda à Sexta 8h00 às 16h00\nSábado 8h00 às 12h00",
-      servicos:
-          "serviço 1 - cabelo simples \nserviço2 - corte militar \nserviço3 - degrade\nserviço 4 - cabelo e barba",
-      contato: "87 9 98196922",
-    );
 
     return Container(
       child: Column(children: [
@@ -64,7 +54,7 @@ class TelaProfile extends StatelessWidget {
                 ),
               ),
               Text(
-                barbearia.local,
+                "barbearia.local",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
@@ -76,7 +66,7 @@ class TelaProfile extends StatelessWidget {
           width: 315,
           height: 60,
           child: Text(
-            barbearia.horarioFuncionamento,
+            "barbearia.horarios",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 16),
           ),
@@ -88,7 +78,7 @@ class TelaProfile extends StatelessWidget {
           color: Color.fromRGBO(227, 227, 227, 100),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-            child: Text(barbearia.servicos,
+            child: Text('barbearia.servicos',
                 textAlign: TextAlign.left, style: TextStyle(fontSize: 16)),
           ),
         ),
@@ -104,7 +94,7 @@ class TelaProfile extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
                   child: Text(
-                  barbearia.contato,
+                  'barbearia.contato',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ), 
                 ),
@@ -135,7 +125,8 @@ class TelaProfile extends StatelessWidget {
     );
   }
 
-  Container clientContent(User usuario) => Container(
+  // ignore: avoid_unnecessary_containers
+  Container clientContent(dynamic usuario) => Container(
         child: Column(children: [
           Text(
             "Atividade",

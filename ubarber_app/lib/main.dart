@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:splash_view/source/presentation/pages/pages.dart';
 import 'package:splash_view/source/presentation/presentation.dart';
-import 'package:ubarber_app/src/classes/users.dart';
+import 'package:ubarber_app/src/modules/usuario/users.dart';
 import 'package:ubarber_app/src/components/logo.dart';
 import 'package:ubarber_app/src/components/tile-list.dart';
+import 'package:ubarber_app/src/modules/usuario/get-user.dart';
+import 'package:ubarber_app/src/forms/login-form.dart';
 import 'package:ubarber_app/src/pages/cadastro-cliente.dart';
 import 'package:ubarber_app/src/pages/list-barbearia.dart';
 // ignore: unused_import
 import 'package:ubarber_app/src/pages/login.dart';
 import 'package:ubarber_app/src/pages/profile.dart';
 import 'package:ubarber_app/src/pages/testes.dart';
+import 'package:ubarber_app/src/util/bindings.dart';
 
 void main() {
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp, 
-    DeviceOrientation.portraitUp]);
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
 
@@ -24,7 +27,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    
+
+    return GetMaterialApp(
+      initialBinding: HttpBindings(),
+      getPages: [GetPage(name: "/", page: () => SplashView(
+          backgroundColor: Colors.white,
+          logo: MyLogo(),
+          done: Done(Center(
+            child: TelaTestes(),
+            //TelaLista(items: List<InfoMockup>.generate(10,((i)=> InfoBTN('Barbearia Estilo $i', 'Avenida Presidente Prudente nº$i')),))
+          ))),
+          children: [
+            GetPage(
+              name: '/login', 
+              page: () => LoginPage(),
+              binding: HttpBindings(),)
+          
+          ])],
       debugShowCheckedModeBanner: false,
       title: 'Ubarber Demo',
       theme: ThemeData(
@@ -39,58 +59,7 @@ class MyApp extends StatelessWidget {
               statusBarBrightness: Brightness.dark,
             ),
           )),
-      home: SplashView(
-          backgroundColor: Colors.white,
-          logo: MyLogo(),
-          done: Done(Center(
-              child:
-                  //TelaTestes(),
-                  //TelaProfile(
-                  //  usuario: User(
-                  //    username: "Cafezinho", 
-                  //    password: '123', 
-                  //    manter: true),
-                  //  ctx: 1,
-                  //)
-
-              TelaLista(items: List<InfoMockup>.generate(10,((i)=> InfoBTN('Barbearia Estilo $i', 'Avenida Presidente Prudente nº$i')),))
-              //LoginPage(),
-              ))),
-      routes: <String, WidgetBuilder>{
-        '/login': (BuildContext context) => new LoginPage(),
-        '/cadastro': (BuildContext context) => new FormCadastro(),
-        '/barbearia' : (BuildContext context) => TelaProfile(ctx: 1),
-        '/cliente':(BuildContext context) => TelaProfile(ctx: 0)
-      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // ignore: prefer_const_constructors
-    return Scaffold(
-      // ignore: prefer_const_constructors
-      body: Center(
-        child: const Text("Olá Mundo"),
-      ),
-    );
-  }
-}

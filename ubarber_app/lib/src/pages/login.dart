@@ -1,6 +1,6 @@
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ubarber_app/src/components/btn-black.dart';
 import 'package:ubarber_app/src/components/btn-google-primary.dart';
 import 'package:ubarber_app/src/components/divider.dart';
@@ -8,9 +8,12 @@ import 'package:ubarber_app/src/components/logo-letter.dart';
 import 'package:ubarber_app/src/components/text-field.dart';
 import 'package:ubarber_app/src/components/ub-checkbox.dart';
 import 'package:ubarber_app/src/forms/login-form.dart';
+import 'package:ubarber_app/src/modules/classes/client.dart';
 import 'package:ubarber_app/src/pages/cadastro-cliente.dart';
+import 'package:ubarber_app/src/util/const.dart';
+import 'package:ubarber_app/src/util/controller.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends GetView<HttpController> {
   const LoginPage({super.key});
 
   @override
@@ -40,37 +43,21 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  controller.obx((state) => ListView.builder(
+                        itemCount: 3,
+                        itemBuilder: ((_, index) {
+                          final User item = state[index];
+                          return ListTile(
+                            title: Text(item.username),
+                          );
+                        })), onError: (error) {
+                    return Text(error!);
+                  })
                   //TODO: Refinar pagina
-                  const PrimaryGoogleButton(title: "Logar com Google"),
-                  MyDivider(),
-                  LoginForm(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Não tem conta?"),
-                      TextButton(
-                          onPressed: () {
-                            print('TODO: redirecionar para tela de cadastro');
-                          },
-                          child: const Text(
-                            "Cadastre-se!",
-                            style: TextStyle(
-                              color: Colors.black,
-                              decoration: TextDecoration.underline,
-                            ),
-                          ))
-                    ],
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      print("esqueceu a senha kskkss");
-                    },
-                    child: Text("Esqueceu a senha?",
-                        style: TextStyle(
-                          color: Colors.black,
-                          decoration: TextDecoration.underline,
-                        )),
-                  ),
+                  //const PrimaryGoogleButton(title: "Logar com Google"),
+                  //ButtonBlack(method:  LOGIN, title: "login automatico")
+                  //MyDivider(),
+                  //LoginForm(),
                 ],
               ),
             ),

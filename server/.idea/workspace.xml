@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4b469367-7907-4a00-b793-cfb40c166116" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/lib/src/classes/barber.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/lib/src/classes/barber.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/lib/src/classes/client.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/lib/src/classes/client.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/lib/src/classes/users.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/lib/src/classes/users.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/lib/src/components/btn-black.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/lib/src/components/btn-black.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/lib/src/controller/requests_atividades.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/lib/src/forms/login-form.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/lib/src/forms/login-form.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/lib/src/pages/list-barbearia.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/lib/src/pages/list-barbearia.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/lib/src/pages/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/lib/src/pages/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/lib/src/pages/profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/lib/src/pages/profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/lib/src/pages/testes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/lib/src/pages/testes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/lib/src/util/const.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/lib/src/util/const.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/lib/src/util/methods.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/lib/src/util/methods.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/linux/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ubarber_app/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../ubarber_app/windows/flutter/generated_plugins.cmake" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2OLf7mQYVgZQtcvMJLXu7X7KAaY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4b469367-7907-4a00-b793-cfb40c166116" name="Changes" comment="" />
+      <created>1681344622098</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681344622098</updated>
+    </task>
+    <servers />
+  </component>
+</project>

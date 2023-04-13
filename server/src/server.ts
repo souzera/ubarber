@@ -57,6 +57,26 @@ app.get('/usuario/:id', async (request, response) => {
     return response.json(usuario)
 })
 
+app.get('/user-name/:username',async (request, response) => {
+    const username = request.params.username
+    const usuario = await prisma.usuario.findUnique(
+        {
+            select: {
+                id: true,
+                username: true,
+                senha: true,
+                status: true,
+                url_avatar: true
+            },
+            where: {
+                username: username
+            }
+        }
+    )
+
+    return response.json(usuario)
+})
+
 // Cliente ROUTES
 
 app.get('/clientes',async (request, response) => {
@@ -64,7 +84,7 @@ app.get('/clientes',async (request, response) => {
         {
             select:{
                 id:true,
-                user_id:true,
+                user:true,
                 nome: true,
                 telefone: true,
                 status:true
@@ -83,7 +103,7 @@ app.get('/cliente/:id',async (request, response) => {
         {
             select:{
                 id:true,
-                user_id:true,
+                user:true,
                 nome: true,
                 telefone: true,
                 status:true
@@ -104,7 +124,7 @@ app.get('/barbearias', async (request, response) =>{
         select:{
             id: true,
             nome: true,
-            user_id: true,
+            user: true,
             whatsapp:true,
             local:true,
             horarios:true
