@@ -26,7 +26,8 @@ class TelaProfile extends StatelessWidget {
     }
   }
 
-  void openURL() async {
+  void openURL(whatsapp) async {
+    //const url 'https://wa.me/${whatsapp}';= 
     const url = 'https://wa.me/558798196922';
     if (await canLaunch(url)) {
       await launch(url);
@@ -106,7 +107,8 @@ class TelaProfile extends StatelessWidget {
                 color: Color.fromRGBO(227, 227, 227, 100),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
-                onPressed: () => openURL(),
+                //todo: consulta contato barbearia
+                onPressed: () => openURL('558798196922'),
                 child: Column(
                   children: [
                     Padding(

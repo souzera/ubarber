@@ -23,7 +23,7 @@ model Usuario {
 
 model Cliente {
   id        Int     @id @default(autoincrement())
-  user_id  Int
+  user_id  Int @unique
   nome String
   telefone String
   status Boolean @default(true)
@@ -35,7 +35,7 @@ model Cliente {
 
 model Barbearia{
   id        Int     @id @default(autoincrement())
-  user_id  Int
+  user_id  Int @unique
   nome String
   whatsapp String
   local String

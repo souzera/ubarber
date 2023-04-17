@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ubarber_app/src/modules/usuario/users.dart';
 import 'package:ubarber_app/src/util/const.dart';
 import 'package:ubarber_app/src/util/methods.dart';
@@ -14,10 +15,6 @@ class ButtonBlack extends StatefulWidget {
 }
 
 class _BlackButton extends State<ButtonBlack> {
-  selectMethod() {
-    print('executar ação');
-  }
-
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -25,7 +22,7 @@ class _BlackButton extends State<ButtonBlack> {
           fixedSize: MaterialStatePropertyAll<Size>(Size(270, 60)),
           backgroundColor: MaterialStatePropertyAll<Color>(Colors.black),
         ),
-        onPressed: this.selectMethod(),
+        onPressed: () => widget.method,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -38,5 +35,17 @@ class _BlackButton extends State<ButtonBlack> {
             )
           ],
         ));
+  }
+
+  selectMethod(int codMethod) {
+    switch (codMethod) {
+      case 101:
+        return loginMethod();
+    }
+  }
+
+  loginMethod() {
+    //Todo: autenticacao.
+    Get.toNamed('/barbearias');
   }
 }

@@ -117,6 +117,37 @@ app.get('/cliente/:id',async (request, response) => {
     return response.json(cliente)
 })
 
+app.get('/client-user/:username', async (request, response) => {
+    const _username = request.params.username
+    const user = await prisma.usuario.findUnique(
+        {   
+            select:{
+                id:true
+            },
+            where: {
+                username: _username
+            }       
+        }
+    )
+
+    const user_id = user?.id.valueOf()
+    const client = await prisma.cliente.findMany(
+        {
+            select:{
+                id:true,
+                nome:true,
+                status:true,
+                telefone:true,
+                user:true,
+            },
+            where:{
+                user_id:user_id
+            }
+        }
+    )
+    return response.json(client)
+})
+
 // Barbearia ROUTES
 
 app.get('/barbearias', async (request, response) =>{
@@ -132,6 +163,40 @@ app.get('/barbearias', async (request, response) =>{
     })
 
     return response.json(barbearias)
+})
+
+app.get('/barber-user/:username',async (request, response) => {
+
+    const _username = request.params.username
+    const user = await prisma.usuario.findUnique(
+        {
+            select:{
+                id:true,
+            },
+            where:{
+                username:_username
+            }
+        }
+    )
+
+    const user_id = user?.id.valueOf()
+    const barber = await prisma.barbearia.findMany(
+        {
+            select:{
+                id:true,
+                nome:true,
+                horarios:true,
+                local:true,
+                whatsapp:true,
+                user:true,
+            }, where:{
+                user_id:user_id
+            }
+        }
+    )
+
+    return response.json(barber)
+    
 })
 
 // Atividade ROUTES

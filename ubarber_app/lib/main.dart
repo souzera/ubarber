@@ -30,7 +30,6 @@ class MyApp extends StatelessWidget {
     
 
     return GetMaterialApp(
-      initialBinding: HttpBindings(),
       getPages: [GetPage(name: "/", page: () => SplashView(
           backgroundColor: Colors.white,
           logo: MyLogo(),
@@ -42,9 +41,16 @@ class MyApp extends StatelessWidget {
             GetPage(
               name: '/login', 
               page: () => LoginPage(),
-              binding: HttpBindings(),)
-          
-          ])],
+              binding: HttpBindings(),),
+            GetPage(
+              name: '/cadastro', 
+              page: () => FormCadastro(),),
+            GetPage(
+              name: '/barbearias', 
+              page: ()=> TelaLista(items: List<InfoMockup>.generate(10,((i)=> InfoBTN('Barbearia Estilo $i', 'Avenida Presidente Prudente nº$i')),)))
+              //binding barbearias
+          ]
+        )],
       debugShowCheckedModeBanner: false,
       title: 'Ubarber Demo',
       theme: ThemeData(

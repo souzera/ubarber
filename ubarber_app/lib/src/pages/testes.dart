@@ -30,7 +30,16 @@ class _TesteState extends State<TelaTestes> {
               children: [
                 TextButton(onPressed: () => {
                   Get.toNamed('/login')
-                }, child: Text('Login', style: TextStyle(fontSize: 32),))
-              ],)));
+                }, child: Text('Login', style: TextStyle(fontSize: 32),)),
+                TextButton(onPressed: () => {
+                  Get.toNamed('/cadastro')
+                }, child: Text('Cadastro Cliente', style: TextStyle(fontSize: 32),)),
+                TextButton(onPressed: () => {
+                  Get.toNamed('/barbearias')
+                }, child: Text('Barbearias', style: TextStyle(fontSize: 32),)),
+              ],
+            )
+          )
+        );
   }
 }

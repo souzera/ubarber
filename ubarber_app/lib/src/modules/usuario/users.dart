@@ -43,7 +43,7 @@ class User {
         id: map['id'],
         username: map['username'],
         senha: map['senha'],
-        urlAvatar: map['urlAvatar'],
+        urlAvatar: map['url_avatar'],
         status: map['status']);
 
     return user;

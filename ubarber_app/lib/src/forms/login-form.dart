@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ubarber_app/src/modules/usuario/users.dart';
 import 'package:ubarber_app/src/components/btn-black.dart';
 import 'package:ubarber_app/src/components/text-field.dart';
@@ -12,7 +13,8 @@ class LoginForm extends StatefulWidget {
 
 class _LoginForm extends State<LoginForm> {
   final _formkey = GlobalKey<FormState>();
-  User _user = User(username: "", senha: "", status: false, id: 1, urlAvatar: '');
+  User _user =
+      User(username: "", senha: "", status: false, id: 1, urlAvatar: '');
 
   bool _validarUser() {
     if (_user.username == 'matheus' && _user.senha == 'senha') {
@@ -40,8 +42,9 @@ class _LoginForm extends State<LoginForm> {
           title: "Manter-se conectado",
         ),
         ButtonBlack(
-          title: 'Login',
-          method: LOGIN),
+            title: 'Login',
+            method: LOGIN
+          ),
       ],
     ));
   }

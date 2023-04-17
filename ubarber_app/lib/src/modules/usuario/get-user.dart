@@ -11,13 +11,13 @@ class UserController implements IUserRepository {
     final response =
         await http.get(Uri.parse('${URL_API}/user-name/${username}'));
     Map<String, dynamic> json = jsonDecode(response.body);
-    return User.fromJson(json);
+    return User.fromMap(json);
   }
 
   @override
   Future<List<User>> findAll() async {
     final response = await http.get(Uri.parse('${URL_API}/usuarios'));
-    List<dynamic> json = jsonDecode(response.body);
-    return json.map<User>((resp) =>User.fromMap(resp)).toList();
+    List<Map<String, dynamic>> json = jsonDecode(response.body);
+    return json.map<User>((resp) => User.fromMap(resp)).toList();
   }
 }

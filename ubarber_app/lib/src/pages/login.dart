@@ -43,21 +43,15 @@ class LoginPage extends GetView<HttpController> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  controller.obx((state) => ListView.builder(
-                        itemCount: 3,
-                        itemBuilder: ((_, index) {
-                          final User item = state[index];
-                          return ListTile(
-                            title: Text(item.username),
-                          );
-                        })), onError: (error) {
-                    return Text(error!);
-                  })
                   //TODO: Refinar pagina
-                  //const PrimaryGoogleButton(title: "Logar com Google"),
-                  //ButtonBlack(method:  LOGIN, title: "login automatico")
-                  //MyDivider(),
-                  //LoginForm(),
+                  const PrimaryGoogleButton(title: "Logar com Google"),
+                  MyDivider(),
+                  LoginForm(),
+                  TextButton(
+                      onPressed: () {
+                        Get.toNamed('/cadastro');
+                      },
+                      child: Text('Cadastrar-se'))
                 ],
               ),
             ),
