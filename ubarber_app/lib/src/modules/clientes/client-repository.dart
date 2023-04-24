@@ -1,4 +1,4 @@
-import 'package:ubarber_app/src/modules/classes/client.dart';
+import 'package:ubarber_app/src/modules/clientes/client.dart';
 
 abstract class IClientRepository {
   Future<List<Cliente>> findAll();

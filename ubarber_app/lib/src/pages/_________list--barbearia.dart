@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ubarber_app/src/modules/classes/barber.dart';
+import 'package:ubarber_app/src/modules/barbearias/barber.dart';
 import 'package:ubarber_app/src/components/fade.dart';
 import 'package:ubarber_app/src/components/logo-letter.dart';
 import 'package:ubarber_app/src/components/menu-bottom.dart';

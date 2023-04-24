@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:ubarber_app/src/modules/usuario/users.dart';
 
 Barbearia barbeariaFromJson(String str) => Barbearia.fromJson(json.decode(str));
 
@@ -40,37 +41,5 @@ class Barbearia {
         "whatsapp": whatsapp,
         "local": local,
         "horarios": horarios,
-    };
-}
-
-class User {
-    User({
-        required this.id,
-        required this.username,
-        required this.senha,
-        required this.urlAvatar,
-        required this.status,
-    });
-
-    int id;
-    String username;
-    String senha;
-    String urlAvatar;
-    bool status;
-
-    factory User.fromJson(Map<String, dynamic> json) => User(
-        id: json["id"],
-        username: json["username"],
-        senha: json["senha"],
-        urlAvatar: json["url_avatar"],
-        status: json["status"],
-    );
-
-    Map<String, dynamic> toJson() => {
-        "id": id,
-        "username": username,
-        "senha": senha,
-        "url_avatar": urlAvatar,
-        "status": status,
     };
 }

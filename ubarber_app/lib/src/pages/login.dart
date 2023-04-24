@@ -8,7 +8,7 @@ import 'package:ubarber_app/src/components/logo-letter.dart';
 import 'package:ubarber_app/src/components/text-field.dart';
 import 'package:ubarber_app/src/components/ub-checkbox.dart';
 import 'package:ubarber_app/src/forms/login-form.dart';
-import 'package:ubarber_app/src/modules/classes/client.dart';
+import 'package:ubarber_app/src/modules/clientes/client.dart';
 import 'package:ubarber_app/src/pages/cadastro-cliente.dart';
 import 'package:ubarber_app/src/util/const.dart';
 import 'package:ubarber_app/src/util/controller.dart';

@@ -9,11 +9,12 @@ import 'package:ubarber_app/src/components/tile-list.dart';
 import 'package:ubarber_app/src/modules/usuario/get-user.dart';
 import 'package:ubarber_app/src/forms/login-form.dart';
 import 'package:ubarber_app/src/pages/cadastro-cliente.dart';
-import 'package:ubarber_app/src/pages/list-barbearia.dart';
+import 'package:ubarber_app/src/pages/_________list--barbearia.dart';
+import 'package:ubarber_app/src/pages/list-barbearias.dart';
 // ignore: unused_import
 import 'package:ubarber_app/src/pages/login.dart';
 import 'package:ubarber_app/src/pages/profile.dart';
-import 'package:ubarber_app/src/pages/testes.dart';
+import 'package:ubarber_app/src/pages/testes-dart.dart';
 import 'package:ubarber_app/src/util/bindings.dart';
 
 void main() {
@@ -34,8 +35,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.white,
           logo: MyLogo(),
           done: Done(Center(
-            child: TelaTestes(),
-            //TelaLista(items: List<InfoMockup>.generate(10,((i)=> InfoBTN('Barbearia Estilo $i', 'Avenida Presidente Prudente nº$i')),))
+            child: TestesDart(),
           ))),
           children: [
             GetPage(
@@ -47,7 +47,8 @@ class MyApp extends StatelessWidget {
               page: () => FormCadastro(),),
             GetPage(
               name: '/barbearias', 
-              page: ()=> TelaLista(items: List<InfoMockup>.generate(10,((i)=> InfoBTN('Barbearia Estilo $i', 'Avenida Presidente Prudente nº$i')),)))
+              page: () => ListBarbearias(),)
+              //()=> TelaLista(items: List<InfoMockup>.generate(10,((i)=> InfoBTN('Barbearia Estilo $i', 'Avenida Presidente Prudente nº$i')),))),
               //binding barbearias
           ]
         )],
