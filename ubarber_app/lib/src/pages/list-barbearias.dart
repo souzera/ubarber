@@ -40,8 +40,7 @@ class _ListBarbeariasState extends State<ListBarbearias> {
                           },
                         );
                       });
-                }
-                return CircularProgressIndicator();
+                }return CircularProgressIndicator();
               },
             ),
           ),

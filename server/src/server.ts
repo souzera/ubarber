@@ -77,6 +77,27 @@ app.get('/user-name/:username',async (request, response) => {
     return response.json(usuario)
 })
 
+app.post('/logar',async (request, response) => {
+
+    const body = request.body
+
+    const usuario = await prisma.usuario.findUnique(
+        {   
+            select:{
+                username:true,
+                senha:true
+            },
+            where:{
+                username:body.username
+            }
+        }
+    )
+
+    if (body.password == usuario?.senha)
+        {return response.json(true)}
+    else {return response.json(false)}
+})
+
 // Cliente ROUTES
 
 app.get('/clientes',async (request, response) => {

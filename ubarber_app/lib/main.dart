@@ -9,13 +9,13 @@ import 'package:ubarber_app/src/components/tile-list.dart';
 import 'package:ubarber_app/src/modules/usuario/get-user.dart';
 import 'package:ubarber_app/src/forms/login-form.dart';
 import 'package:ubarber_app/src/pages/cadastro-cliente.dart';
-import 'package:ubarber_app/src/pages/_________list--barbearia.dart';
+import 'package:ubarber_app/src/pages/base/_________list--barbearia.dart';
 import 'package:ubarber_app/src/pages/list-barbearias.dart';
 // ignore: unused_import
+import 'package:ubarber_app/src/pages/base/________login.dart';
 import 'package:ubarber_app/src/pages/login.dart';
 import 'package:ubarber_app/src/pages/profile.dart';
 import 'package:ubarber_app/src/pages/testes-dart.dart';
-import 'package:ubarber_app/src/util/bindings.dart';
 
 void main() {
   SystemChrome.setPreferredOrientations(
@@ -40,8 +40,9 @@ class MyApp extends StatelessWidget {
           children: [
             GetPage(
               name: '/login', 
-              page: () => LoginPage(),
-              binding: HttpBindings(),),
+              page: () => Login(),
+              //binding: HttpBindings(),
+              ),
             GetPage(
               name: '/cadastro', 
               page: () => FormCadastro(),),

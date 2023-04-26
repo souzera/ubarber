@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ubarber_app/src/components/btn-black.dart';
+import 'package:ubarber_app/src/components/base/______btn-black.dart';
 import 'package:ubarber_app/src/components/btn-google-primary.dart';
 import 'package:ubarber_app/src/components/logo-letter.dart';
 import 'package:ubarber_app/src/components/text-field.dart';
