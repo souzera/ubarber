@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ubarber_app/src/pages/profile.dart';
+import 'package:ubarber_app/src/pages/base/__________profile.dart';
 
 class ListTiles extends StatelessWidget {
   final List<InfoMockup> items;

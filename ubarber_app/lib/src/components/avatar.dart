@@ -11,16 +11,17 @@ class Avatar extends StatelessWidget {
   Widget build(BuildContext context) => _build();
 
   Widget _build() => Container(
-        height: 208,
-        width: 156,
+        height: 240,
+        width: 300,
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           CircleAvatar(
             radius: 70,
             backgroundImage: NetworkImage(url),
           ),
-          Padding(padding: EdgeInsets.only(top: 5)),
+          Padding(padding: EdgeInsets.only(top: 20)),
           Text(
             username,
+            textAlign: TextAlign.center,
             style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
           )
         ]),

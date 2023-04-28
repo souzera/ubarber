@@ -79,19 +79,21 @@ app.get('/user-name/:username',async (request, response) => {
 
 app.post('/logar',async (request, response) => {
 
-    const body = request.body
+    const body = request.body.username
+    console.log(body.username);
 
     const usuario = await prisma.usuario.findUnique(
-        {   
+        {
             select:{
                 username:true,
                 senha:true
             },
             where:{
-                username:body.username
+                username: body.username
             }
         }
     )
+
 
     if (body.password == usuario?.senha)
         {return response.json(true)}
