@@ -39,7 +39,7 @@ class User {
       };
 
   factory User.fromMap(Map<String, dynamic> map) {
-    final user = User(
+    final User user = User(
         id: map['id'],
         username: map['username'],
         senha: map['senha'],
@@ -47,5 +47,11 @@ class User {
         status: map['status']);
 
     return user;
+  }
+
+  @override
+  String toString() {
+    // TODO: implement toString
+    return 'id: ${id}, username: ${username}, urlAvatar: ${urlAvatar}';
   }
 }

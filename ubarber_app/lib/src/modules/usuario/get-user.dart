@@ -23,3 +23,5 @@ Future<User> getByUsername(username) async {
     throw Exception('falha ao tentar consultar');
   }
 }
+
+

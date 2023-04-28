@@ -12,6 +12,7 @@ class ButtonBlack extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() => _BlackButton();
+
 }
 
 class _BlackButton extends State<ButtonBlack> {
@@ -48,4 +49,6 @@ class _BlackButton extends State<ButtonBlack> {
     //Todo: autenticacao.
     Get.toNamed('/barbearias');
   }
+
+  
 }

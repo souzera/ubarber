@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:splash_view/source/presentation/pages/pages.dart';
 import 'package:splash_view/source/presentation/presentation.dart';
+import 'package:ubarber_app/src/modules/barbearias/barber-getxcontroller.dart';
 import 'package:ubarber_app/src/modules/usuario/users.dart';
 import 'package:ubarber_app/src/components/logo.dart';
 import 'package:ubarber_app/src/components/tile-list.dart';
@@ -14,7 +17,8 @@ import 'package:ubarber_app/src/pages/list-barbearias.dart';
 // ignore: unused_import
 import 'package:ubarber_app/src/pages/base/________login.dart';
 import 'package:ubarber_app/src/pages/login.dart';
-import 'package:ubarber_app/src/pages/profile.dart';
+import 'package:ubarber_app/src/pages/base/__________profile.dart';
+import 'package:ubarber_app/src/pages/profile_barber.dart';
 import 'package:ubarber_app/src/pages/testes-dart.dart';
 
 void main() {
@@ -28,31 +32,28 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-
     return GetMaterialApp(
-      getPages: [GetPage(name: "/", page: () => SplashView(
-          backgroundColor: Colors.white,
-          logo: MyLogo(),
-          done: Done(Center(
-            child: TestesDart(),
-          ))),
-          children: [
-            GetPage(
-              name: '/login', 
-              page: () => Login(),
-              //binding: HttpBindings(),
+      getPages: [
+        GetPage(
+            name: "/",
+            page: () => SplashView(
+                backgroundColor: Colors.white,
+                logo: MyLogo(),
+                done: Done(Center(
+                  child: TestesDart(),
+                ))),
+            children: [
+              GetPage(
+                name: '/login',
+                page: () => Login(),
+                //binding: HttpBindings(),
               ),
-            GetPage(
-              name: '/cadastro', 
-              page: () => FormCadastro(),),
-            GetPage(
-              name: '/barbearias', 
-              page: () => ListBarbearias(),)
-              //()=> TelaLista(items: List<InfoMockup>.generate(10,((i)=> InfoBTN('Barbearia Estilo $i', 'Avenida Presidente Prudente nº$i')),))),
-              //binding barbearias
-          ]
-        )],
+              GetPage(
+                name: '/cadastro',
+                page: () => FormCadastro(),
+              ),
+            ])
+      ],
       debugShowCheckedModeBanner: false,
       title: 'Ubarber Demo',
       theme: ThemeData(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ubarber_app/src/forms/login-form.dart';
+import 'package:get/get.dart';
 
 import '../components/logo-letter.dart';
 
@@ -17,13 +19,21 @@ class _LoginState extends State<Login> {
        return Scaffold(
            body: Center(
              child: Container(
-              color: Colors.amber,
               width: 350,
               height: 800,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   LogoLetter(),
+                  Container(
+                    width: 300,
+                    child: LoginForm(),
+                  ),
+                  TextButton(
+                      onPressed: () {
+                        Get.toNamed('/cadastro');
+                      },
+                      child: Text('Cadastrar-se'))
                 ]
               ),
              ),

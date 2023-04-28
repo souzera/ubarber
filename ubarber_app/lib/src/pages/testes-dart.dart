@@ -32,9 +32,9 @@ class _TestesDartState extends State<TestesDart> {
           children: [
             TextButton(
               onPressed:() {
-                Get.toNamed('/barbearias');
+                Get.toNamed('/cadastro');
               }, 
-              child: Text('Barbearias', style: TextStyle(fontSize: 32),)),
+              child: Text('Cadastro', style: TextStyle(fontSize: 32),)),
             TextButton(
               onPressed:() {
                 Get.toNamed('/login');

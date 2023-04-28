@@ -8,7 +8,7 @@ import 'package:ubarber_app/src/components/menu-bottom.dart';
 import 'package:ubarber_app/src/components/tile-list.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../modules/usuario/users.dart';
+import '../../modules/usuario/users.dart';
 
 class TelaProfile extends StatelessWidget {
   //final User usuario;
@@ -122,8 +122,7 @@ class TelaProfile extends StatelessWidget {
                   ],
                 )),
           ]),
-        ),
-      ]),
+        ),]),
     );
   }
 
@@ -154,11 +153,12 @@ class TelaProfile extends StatelessWidget {
           //TODO: cliente ou barbearia
           _content,
           Padding(padding: EdgeInsets.only(top: 30)),
-          MenuBottom(
-            icon1: Icon(Icons.arrow_back),
-            icon2: Icon(Icons.search),
-            icon3: Icon(Icons.draw_outlined),
-          ),
+          //MenuBottom(
+          //  icon1: Icon(Icons.arrow_back),
+          //  icon2: Icon(Icons.search),
+          //  icon3: Icon(Icons.draw_outlined), 
+          //  user: null,
+          //),
         ]),
       ),
     );
