@@ -8,4 +8,4 @@ O projeto UBarber é um aplicativo móvel dedicado à facilitação da busca por
 
 ## Demonstração
 
-https://www.figma.com/file/MFKiZ2ANYMsLQ6D8qeGS7I/Ubarber?type=design&node-id=79%3A2352&mode=design&t=VMEiphIHFW4PZth6-1
+https://www.figma.com/proto/MFKiZ2ANYMsLQ6D8qeGS7I/Ubarber?type=design&node-id=22-59&t=4g2VCO1XBrn5TIRg-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A3&mode=design
